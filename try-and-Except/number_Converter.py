@@ -1,10 +1,15 @@
 while True:
-    usr_Input = input("Enter a number to be converted to a float: ")
+    print("Welcome to the number type converter!")
+    usr_Input = input("\nEnter a number or\npress enter to exit: ")
     if usr_Input == "":
-        print("See you later!")
+        print("\nSee you later!\n")
         break
     try:
-        converted = float(usr_Input)
-        print("Your number has been successfully converted!")
+        if '.' in usr_Input:
+            conv_num = float(usr_Input)
+            print(f"\nThe number {usr_Input} is now a float ({conv_num})!")
+        else:
+            conv_num = int(usr_Input)
+            print(f"\nThe number {usr_Input} is now an integer ({conv_num})!")
     except ValueError:
-        print("Only a number can be accepted.")
+        print("\n\nInvalid Input! Please enter a number (e.g., 42, or 3.14).")
